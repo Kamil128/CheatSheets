@@ -20,12 +20,12 @@ minikube delete --all --purge
 docker rmi gcr.io/k8s-minikube/kicbase:v0.0.34
 ```
 
-# Dashboard
+## Dashboard
 ```bash
 minkube dahboard
 ```
 
-# Context
+## Context
 ```bash
 kubectl config current-context  # current context
 ```
@@ -46,7 +46,7 @@ kubectl config set-context <contest-name> \
   --user=<user>
 ```
 
-# Port Forward
+## Port Forward
 ```bash
 kubectl port-forward service/<service-name> <local-port>:<remote-port>
 ```
@@ -56,17 +56,28 @@ kubectl port-forward postgresql-0 5430:5432
 kubectl port-forward postgresql-0 5430:5432 --context=context-name
 ```
 
-# Node
+## Node
 ```bash
 kubectl get nodes
 ```
 
-# Pod
+## Pod
+```bash
+kubectl apply -f simple-pod.yaml  # create simple pod from simple-pod.yaml file
+```
+```bash
+kubectl get pods  # get all pods
+```
+
 ```bash
 kubectl -n <namespace> exec postgresql-0 -- df -ah
 ```
+### interactive shell
 ```bash
 kubectl exec --stdin --tty <pod-name> -- /bin/bash
+```
+```bash
+kubectl exec -it <pod-name> -- /bin/bash
 ```
 
 

@@ -2,7 +2,7 @@
 
 ## Start minikube:
 ```bash
-minikube start —vm-driver=qemu
+minikube start --vm-driver=qemu
 ````
 ```bash
 minikube start --driver=docker --alsologtostderr -v=5
